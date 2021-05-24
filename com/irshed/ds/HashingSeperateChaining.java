@@ -50,8 +50,10 @@ public class HashingSeperateChaining {
         Node temp = getNode(key);
         int keyHash = normalizedHash(key);
         LinkedList values = hashTable[keyHash];
-        if (values != null && temp != null)
+        if (values != null && temp != null) {
+            size--;
             values.remove(temp);
+        }
     }
 
     public int normalizedHash(String key) {
